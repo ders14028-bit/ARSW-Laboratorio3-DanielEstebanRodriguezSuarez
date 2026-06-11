@@ -1,4 +1,8 @@
 edu\eci\arsw\ejercicio1\SalonServer.class
-edu\eci\arsw\ejercicio1\SalonClient.class
+edu\eci\arsw\ejercicio2\Salon.class
 edu\eci\arsw\ejercicio1\SalonRepository.class
 edu\eci\arsw\ejercicio1\Salon.class
+edu\eci\arsw\ejercicio2\SalonRepository.class
+edu\eci\arsw\ejercicio2\SalonHandler.class
+edu\eci\arsw\ejercicio2\SalonHttpServer.class
+edu\eci\arsw\ejercicio1\SalonClient.class
