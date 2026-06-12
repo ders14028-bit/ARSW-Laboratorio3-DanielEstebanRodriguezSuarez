@@ -133,13 +133,22 @@ Compared with RMI, gRPC is language-neutral, explicit, and better suited for dis
 
 This exercise implements a wellness platform composed of multiple gRPC services. It includes appointment management plus additional services for medical specialties, gym sessions, and recreation resources.
 
+### Microservice Diagram
+
+![alt text](image-23.png)
+
 ### Implementation
 
 Each domain service runs as an independent gRPC server with its own port and in-memory data model. A client aggregates the available services and interacts with them through generated stubs.
 
 ### Required Answers / Notes
 
-The system is split by responsibility into small services: `AppointmentService` manages appointments, `MedicalService` manages medical specialties, `GymService` manages gym sessions, and `RecreationService` manages recreational resources.
+The system is split by responsibility into small services:
+
+- `AppointmentService` manages appointment creation, cancellation, and per-student appointment queries.
+- `MedicalService` manages the catalog of medical specialties and their availability.
+- `GymService` manages gym sessions, their capacity, and reservation counters.
+- `RecreationService` manages recreational resources and whether they are available for reservation.
 
 Each service owns its own in-memory data, so there is no shared database or shared state between services. That separation keeps the services cohesive and makes each one easier to understand and replace.
 
