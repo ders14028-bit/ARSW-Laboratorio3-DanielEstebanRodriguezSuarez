@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "edu.eci.arsw.ejercicio5";
+option java_outer_classname = "RecreationProto";
+
+import "medical.proto";
+
+service RecreationService {
+  rpc GetResources (Empty) returns (ResourceList);
+  rpc ReserveResource (RecreationRequest) returns (RecreationResponse);
+}
+
+message RecreationResource {
+  string id = 1;
+  string name = 2;
+  string type = 3;
+  bool available = 4;
+}
+
+message ResourceList {
+  repeated RecreationResource resources = 1;
+}
+
+message RecreationRequest {
+  string studentId = 1;
+  string resourceId = 2;
+}
+
+message RecreationResponse {
+  bool success = 1;
+  string message = 2;
+}
